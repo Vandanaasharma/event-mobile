@@ -5,7 +5,7 @@ import Glyphs from "assets/Glyphs";
 import CustomText from "components/TextWrapper";
 import Button from "components/button";
 import React, { useMemo } from "react";
-import { Image, TextInput, View } from "react-native";
+import { Image, TextInput, View, ImageBackground, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useDispatch, useSelector } from "react-redux";
 import { setAppTheme } from "redux/actions/ThemeAction";
@@ -24,50 +24,37 @@ const SignInScreen = () => {
   );
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.container}>
-        <View style={styles.logoContainer}>
-          <Image style={styles.logoStyle} source={Glyphs.Logo} />
-        </View>
-        <View style={styles.fieldsContainer}>
-          <View style={styles.fieldsSubContainer}>
-            <TextInput
-              style={styles.input}
-              placeholderTextColor={colors.text}
-              placeholder={localStrings.getString(LocalString.placeholderEmail)}
-            />
-            <TextInput
-              style={styles.password}
-              placeholderTextColor={colors.text}
-              placeholder={localStrings.getString(
-                LocalString.placeholderPassword,
-              )}
-            />
-            <CustomText
-              fontSize={10}
-              color={colors.text}
-              style={styles.forgotPasswordText}
-            >
-              {localStrings.getString(LocalString.forgotPassword)}
-            </CustomText>
+    <ImageBackground
+      // source={require('../../../assets/images/login_background.png')}
+      style={styles.backgroundImage}
+    >
+      <SafeAreaView style={styles.container}>
+        <View style={styles.container}>
+          <View style={styles.logoContainer}>
+            <Image style={styles.logoStyle} source={Glyphs.Logo} />
+          </View>
+          <View>    
+            <Text style={styles.headerText}>
+            Please enter your mobile number or email address for verification
+          </Text>
           </View>
         </View>
-      </View>
-      <Button
-        text={localStrings.getString(LocalString.login)}
-        onPress={async () => {
-          navigate(SCREENS.DASHBOARD);
-        }}
-      />
-      <Button
-        text={localStrings.getString(LocalString.changeTheme)}
-        onPress={() => dispatch(setAppTheme(!isDarkMode))}
-      />
-      <Button
-        text={localStrings.getString(LocalString.changeLanguage)}
-        onPress={async () => localStrings.setLanguage("en")}
-      />
-    </SafeAreaView>
+        <Button
+          text={localStrings.getString(LocalString.login)}
+          onPress={async () => {
+            navigate(SCREENS.DASHBOARD);
+          }}
+        />
+        <Button
+          text={localStrings.getString(LocalString.changeTheme)}
+          onPress={() => dispatch(setAppTheme(!isDarkMode))}
+        />
+        <Button
+          text={localStrings.getString(LocalString.changeLanguage)}
+          onPress={async () => localStrings.setLanguage("en")}
+        />
+      </SafeAreaView>
+    </ImageBackground>
   );
 };
 

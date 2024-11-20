@@ -13,11 +13,19 @@ interface Style {
   password: ViewStyle;
   submitButton: TextStyle;
   submitText: ViewStyle;
+  backgroundImage:ViewStyle
+  headerText:TextStyle
 }
 
 export default (theme: ExtendedTheme) => {
   const { colors } = theme;
   return StyleSheet.create<Style>({
+    headerText: {
+      fontSize: 16,
+      color: '#333333',
+      textAlign: 'center',
+      marginBottom: 20,
+    },
     container: {
       flex: 1,
       flexDirection: "column",
@@ -25,13 +33,17 @@ export default (theme: ExtendedTheme) => {
       alignItems: "center",
       backgroundColor: colors.background,
     },
+    backgroundImage: {
+      flex: 1,
+      resizeMode: 'cover', 
+    },
     logoContainer: {
       flex: 1,
       justifyContent: "center",
     },
     logoStyle: {
       height: 80,
-      width: 320,
+      width: 80,
     },
     fieldsContainer: {
       flex: 1,
