@@ -6,15 +6,18 @@ interface Style {
   container: ViewStyle;
   fieldsContainer: ViewStyle;
   fieldsSubContainer: ViewStyle;
-  forgotPasswordText: ViewStyle;
-  input: ViewStyle;
+  forgotPasswordText: TextStyle;
+  input: TextStyle;
   logoContainer: ViewStyle;
   logoStyle: ImageStyle;
-  password: ViewStyle;
+  password: TextStyle;
   submitButton: TextStyle;
-  submitText: ViewStyle;
-  backgroundImage:ViewStyle
-  headerText:TextStyle
+  submitText: TextStyle;
+  backgroundImage: ViewStyle;
+  headerText: TextStyle;
+  orText:TextStyle;
+  button:ViewStyle;
+  buttonText:TextStyle
 }
 
 export default (theme: ExtendedTheme) => {
@@ -22,28 +25,46 @@ export default (theme: ExtendedTheme) => {
   return StyleSheet.create<Style>({
     headerText: {
       fontSize: 16,
-      color: '#333333',
-      textAlign: 'center',
+      color: "#333333",
+      textAlign: "center",
       marginBottom: 20,
+      
     },
     container: {
-      flex: 1,
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
-      backgroundColor: colors.background,
+      alignContent:'center',
+      backgroundColor: "transparent",
+      flex: 1
     },
     backgroundImage: {
       flex: 1,
-      resizeMode: 'cover', 
+      resizeMode: "cover",
     },
-    logoContainer: {
-      flex: 1,
-      justifyContent: "center",
+    orText: {
+      fontSize: 16,
+      color: '#aaa',
+      marginVertical: 10,
+    },
+    button: {
+      marginTop: 20,
+      width: 300,
+      height: 60,
+      backgroundColor: '#d32f2f',
+      borderRadius: 30,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    buttonText: {
+      color: '#ffffff',
+      fontSize: 16,
+      fontWeight: 'bold',
     },
     logoStyle: {
       height: 80,
       width: 80,
+      marginBottom: 20,
     },
     fieldsContainer: {
       flex: 1,
@@ -55,13 +76,14 @@ export default (theme: ExtendedTheme) => {
       padding: 30,
     },
     input: {
-      height: 45,
+      height: 60,
       borderWidth: 1,
       borderColor: colors.text,
       borderRadius: 5,
       padding: 10,
       marginBottom: 20,
-      color: colors.text,
+      width:300,
+     color: colors.textFieldBorder,
     },
     password: {
       height: 45,

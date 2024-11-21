@@ -1,58 +1,48 @@
-import { navigate } from "@navigation";
+
 import { useTheme } from "@react-navigation/native";
-import { SCREENS } from "@shared-constants";
+import { SCREENS, STRINGS } from "@shared-constants";
 import Glyphs from "assets/Glyphs";
-import CustomText from "components/TextWrapper";
-import Button from "components/button";
 import React, { useMemo } from "react";
-import { Image, TextInput, View, ImageBackground, Text } from "react-native";
+import { Image, TextInput, View, ImageBackground, Text, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useDispatch, useSelector } from "react-redux";
-import { setAppTheme } from "redux/actions/ThemeAction";
-import { RootState } from "redux/store/Store";
-import { localStrings } from "shared/localization";
-import LocalString from "shared/localization/localEnums";
 import createStyles from "./styles/SignInStyle";
+import { navigate } from "@navigation";
 
 const SignInScreen = () => {
   const theme = useTheme();
-  const { colors } = theme;
   const styles = useMemo(() => createStyles(theme), [theme]);
-  const dispatch = useDispatch();
-  const isDarkMode = useSelector(
-    (state: RootState) => state.themeReducer.isDarkMode,
-  );
+
 
   return (
     <ImageBackground
-      // source={require('../../../assets/images/login_background.png')}
+    source={Glyphs.LoginBackground} 
       style={styles.backgroundImage}
     >
       <SafeAreaView style={styles.container}>
         <View style={styles.container}>
-          <View style={styles.logoContainer}>
-            <Image style={styles.logoStyle} source={Glyphs.Logo} />
-          </View>
-          <View>    
-            <Text style={styles.headerText}>
-            Please enter your mobile number or email address for verification
+          <Image style={styles.logoStyle} source={Glyphs.Logo} />
+          <Text style={styles.headerText}>
+            {STRINGS.LOGIN_PAGE_HEADING}
           </Text>
-          </View>
+          <TextInput
+            style={styles.input}
+            placeholder={STRINGS.MOBILE_NUMBER_MSG}
+            keyboardType="phone-pad"
+          />
+
+          <Text style={styles.orText}>or</Text>
+
+          <TextInput
+            style={styles.input}
+            placeholder={STRINGS.EMAIL_MSG}
+            keyboardType="email-address"
+          />
+
+          <TouchableOpacity style={styles.button} onPress={() => {navigate(SCREENS.OTP_SCREEN)}}>
+            <Text style={styles.buttonText}>Send Verification Code</Text>
+          </TouchableOpacity>
+
         </View>
-        <Button
-          text={localStrings.getString(LocalString.login)}
-          onPress={async () => {
-            navigate(SCREENS.DASHBOARD);
-          }}
-        />
-        <Button
-          text={localStrings.getString(LocalString.changeTheme)}
-          onPress={() => dispatch(setAppTheme(!isDarkMode))}
-        />
-        <Button
-          text={localStrings.getString(LocalString.changeLanguage)}
-          onPress={async () => localStrings.setLanguage("en")}
-        />
       </SafeAreaView>
     </ImageBackground>
   );

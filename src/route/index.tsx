@@ -14,6 +14,7 @@ import NotificationScreen from "views/notification/NotificationScreen";
 import ProfileScreen from "views/profile/ProfileScreen";
 import SearchScreen from "views/search/SearchScreen";
 import HomeScreenViewModel from "../viewModels/HomeScreenViewModel";
+import OTPVerificationScreen from "views/auth/Otp";
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 const HomeStack = createStackNavigator();
@@ -93,6 +94,10 @@ const Navigation = () => {
           name={SCREENS.DASHBOARD}
           component={RenderTabNavigation}
           initialParams={{ appTheme: isDarkMode }}
+        />
+        <Stack.Screen
+          name={SCREENS.OTP_SCREEN}
+          component={OTPVerificationScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

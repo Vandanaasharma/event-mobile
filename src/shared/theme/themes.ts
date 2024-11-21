@@ -26,6 +26,8 @@ export const palette = {
   calpyse: "#2b7488",
   buttonColor: "black",
   buttonTextColor: "white",
+  textFieldBorder:"#e9e9e9",
+
 };
 
 export const LightTheme: ExtendedTheme = {
