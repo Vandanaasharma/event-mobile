@@ -15,9 +15,9 @@ interface Style {
   submitText: TextStyle;
   backgroundImage: ViewStyle;
   headerText: TextStyle;
-  orText:TextStyle;
-  button:ViewStyle;
-  buttonText:TextStyle
+  orText: TextStyle;
+  button: ViewStyle;
+  buttonText: TextStyle;
 }
 
 export default (theme: ExtendedTheme) => {
@@ -28,15 +28,14 @@ export default (theme: ExtendedTheme) => {
       color: "#333333",
       textAlign: "center",
       marginBottom: 20,
-      
     },
     container: {
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
-      alignContent:'center',
+      alignContent: "center",
       backgroundColor: "transparent",
-      flex: 1
+      flex: 1,
     },
     backgroundImage: {
       flex: 1,
@@ -44,22 +43,22 @@ export default (theme: ExtendedTheme) => {
     },
     orText: {
       fontSize: 16,
-      color: '#aaa',
+      color: "#aaa",
       marginVertical: 10,
     },
     button: {
       marginTop: 20,
       width: 300,
       height: 60,
-      backgroundColor: '#d32f2f',
+      backgroundColor: "#d32f2f",
       borderRadius: 30,
-      justifyContent: 'center',
-      alignItems: 'center',
+      justifyContent: "center",
+      alignItems: "center",
     },
     buttonText: {
-      color: '#ffffff',
+      color: "#ffffff",
       fontSize: 16,
-      fontWeight: 'bold',
+      fontWeight: "bold",
     },
     logoStyle: {
       height: 80,
@@ -82,8 +81,8 @@ export default (theme: ExtendedTheme) => {
       borderRadius: 5,
       padding: 10,
       marginBottom: 20,
-      width:300,
-     color: colors.textFieldBorder,
+      width: 300,
+      color: colors.textFieldBorder,
     },
     password: {
       height: 45,

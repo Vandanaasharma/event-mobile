@@ -15,6 +15,7 @@ import ProfileScreen from "views/profile/ProfileScreen";
 import SearchScreen from "views/search/SearchScreen";
 import HomeScreenViewModel from "../viewModels/HomeScreenViewModel";
 import OTPVerificationScreen from "views/auth/Otp";
+import VerificationScreen from "views/auth/Verified";
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 const HomeStack = createStackNavigator();
@@ -98,6 +99,10 @@ const Navigation = () => {
         <Stack.Screen
           name={SCREENS.OTP_SCREEN}
           component={OTPVerificationScreen}
+        />
+        <Stack.Screen
+          name={SCREENS.VERIFICATION}
+          component={VerificationScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
