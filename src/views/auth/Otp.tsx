@@ -2,7 +2,14 @@ import Glyphs from "assets/Glyphs";
 import React, { useMemo, useState } from "react";
 import createStyles from "./styles/OtpVerificationStyle";
 import { useTheme } from "@react-navigation/native";
-import { View, Text, TextInput, TouchableOpacity, Image, ImageBackground, } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  Image,
+  ImageBackground,
+} from "react-native";
 import { SCREENS, STRINGS } from "@shared-constants";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { navigate } from "@navigation";
@@ -51,15 +58,17 @@ const OTPVerificationScreen = () => {
           </View>
 
           <Text style={styles.timerText}>
-            <Text style={styles.resendText}>{STRINGS.RESEND}</Text> {STRINGS.VERIFY_MSG}
+            <Text style={styles.resendText}>{STRINGS.RESEND}</Text>{" "}
+            {STRINGS.VERIFY_MSG}
           </Text>
 
-          <TouchableOpacity style={styles.button}
-               onPress={() => {
-                navigate(SCREENS.VERIFICATION);
-              }}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => {
+              navigate(SCREENS.VERIFICATION);
+            }}
+          >
             <Text style={styles.buttonText}>{STRINGS.VERIFY}</Text>
-
           </TouchableOpacity>
         </View>
       </SafeAreaView>

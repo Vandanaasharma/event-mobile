@@ -10,7 +10,6 @@ export const SCREENS = {
   TAB: "Tab",
   OTP_SCREEN: "OtpScreen",
   VERIFICATION: "VerificationScreen",
-
 };
 
 export const STRINGS = {
@@ -18,9 +17,9 @@ export const STRINGS = {
   EMAIL_MSG: "Enter email address",
   LOGIN_PAGE_HEADING:
     "Please enter your mobile number or email address for verification",
-    OTP_MSG:"Please enter verification code",
-    RESEND:"Resend",
-   VERIFY_MSG:" verification code in 45 seconds",
-   VERIFY:"Verify",
-SEND_VERIFICATION:"Send Verification Code"
+  OTP_MSG: "Please enter verification code",
+  RESEND: "Resend",
+  VERIFY_MSG: " verification code in 45 seconds",
+  VERIFY: "Verify",
+  SEND_VERIFICATION: "Send Verification Code",
 };

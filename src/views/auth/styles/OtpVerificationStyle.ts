@@ -43,7 +43,7 @@ export default (theme: ExtendedTheme) => {
       flexDirection: "row",
       justifyContent: "space-between",
       marginVertical: 20,
-      marginHorizontal:10,
+      marginHorizontal: 10,
       width: "80%",
     },
     otpBox: {
@@ -55,7 +55,7 @@ export default (theme: ExtendedTheme) => {
       textAlign: "center",
       fontSize: 18,
       backgroundColor: "#f9f9f9",
-      marginHorizontal:6
+      marginHorizontal: 6,
     },
     timerText: {
       fontSize: 14,
