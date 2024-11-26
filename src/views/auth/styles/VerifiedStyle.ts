@@ -18,15 +18,18 @@ export default (theme: ExtendedTheme) => {
       backgroundColor: "#fff",
     },
     backgroundImage: {
-      flex: 1,
+      
       width: "100%",
       height: "100%",
       backgroundColor: colors.transparent,
     },
     verificationContainer: {
+      flex: 1,
       justifyContent: "center",
       alignItems: "center",
-      paddingTop: 200,
+      backgroundColor: "white",
+      width: "100%",
+      borderRadius: 700
     },
 
     successText: {

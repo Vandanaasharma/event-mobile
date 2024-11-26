@@ -22,7 +22,9 @@ export default (theme: ExtendedTheme) => {
       justifyContent: "center",
       alignItems: "center",
       padding: 20,
-      backgroundColor: "transparent",
+      backgroundColor: "white",
+      width: "100%",
+      borderRadius: 700
     },
     logo: {
       height: 80,

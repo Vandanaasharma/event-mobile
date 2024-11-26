@@ -34,8 +34,10 @@ export default (theme: ExtendedTheme) => {
       justifyContent: "center",
       alignItems: "center",
       alignContent: "center",
-      backgroundColor: "transparent",
+      backgroundColor: "white",
       flex: 1,
+      width: "100%",
+      borderRadius: 700
     },
     backgroundImage: {
       flex: 1,
